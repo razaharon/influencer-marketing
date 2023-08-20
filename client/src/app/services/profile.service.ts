@@ -33,7 +33,6 @@ export class ProfileService {
   }
 
   private setProfileDetails(profile: IProfile | null): void {
-    console.log('profile', profile?.username)
     this.resetProfileDetails();
     if (!profile) return;
     this.isLoading$.next(true);
