@@ -1,0 +1,36 @@
+@import '/src/variables';
+
+.input-container {
+  position: relative;
+  display: inline-block;
+}
+
+fa-icon {
+  color: $dark-gray;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+input {
+  color: $dark-gray;
+  background-color: $light-gray;
+  border: none;
+  border-radius: 7px;
+  padding-left: 35px;
+  &:focus {
+    color: $dark-gray;
+    background-color: $light-gray;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.autocomplete-container {
+  padding: 0;
+  z-index: 5;
+  position: absolute;
+  background-color: white;
+  border-radius: 15px;
+}

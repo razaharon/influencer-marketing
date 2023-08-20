@@ -1,0 +1,10 @@
+<div class="input-container">
+  <fa-icon [icon]="searchIcon"></fa-icon>
+  <input [(ngModel)]="value" (ngModelChange)="onChange($event)" placeholder="Search" class="form-control" type="text"
+    (focus)="showAutoComplete = true">
+</div>
+<div *ngIf="showAutoComplete" class="row">
+  <div (click)="showAutoComplete = false" class="col-8 offset-2 col-md-4 offset-md-4 autocomplete-container shadow">
+    <ng-content></ng-content>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+@import '/src/variables.scss';
+
+.search-bar {
+  border-bottom: 1px solid $medium-gray;
+}
+
+.autocomplete-item {
+  position: relative;
+  img {
+    height: 50px;
+  }
+  &:hover {
+    background-color: $light-gray;
+    border-radius: 15px;
+  }
+}
+
+p {
+  margin: 0;
+}

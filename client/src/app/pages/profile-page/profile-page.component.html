@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-12 p-0">
+    <app-profile-summary></app-profile-summary>
+  </div>
+</div>
+<div *ngIf="profileService.isLoading$ | async" class="row">
+  <div class="col-12 mt-5 text-center">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</div>
+<div *ngIf="!(profileService.isLoading$ | async)" class="row">
+  <div *ngFor="let post of profileService.posts$ | async" class="col-12 col-md-4 p-2 text-center">
+    <app-post [post]="post"></app-post>
+  </div>
+  <div *ngIf="(profileService.posts$ | async)?.length === 0">
+    <div class="col-12 text-center mt-5">
+      <h2>No Posts Yet</h2>
+    </div>
+  </div>
+</div>

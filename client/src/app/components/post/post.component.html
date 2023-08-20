@@ -1,0 +1,16 @@
+<div (click)="openPost()" class="post-container flex-center">
+  <img crossorigin="anonymous" class="post-size" [src]="post.display_url">
+  <div class="post-overlay post-size d-flex align-items-center justify-content-around p-5">
+    <span class="media-type-icon">
+      <fa-icon *ngIf="mediaTypeIcon" [icon]="mediaTypeIcon"></fa-icon>
+    </span>
+    <span>
+      {{ post.like_count | shortNumber }}
+      <fa-icon [icon]="heart"></fa-icon>
+    </span>
+    <span>
+      {{ post.comment_count | shortNumber }}
+      <fa-icon flip="horizontal" [icon]="comment"></fa-icon>
+    </span>
+  </div>
+</div>

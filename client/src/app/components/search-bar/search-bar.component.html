@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-12 p-0">
+    <div class="search-bar py-3 text-center">
+      <form [formGroup]="searchForm">
+        <app-autocomplete-input formControlName="searchValue">
+          <div *ngFor="let user of users" class="row autocomplete-item pointer p-2" (click)="selectItem(user)">
+            <div class="col-3 flex-center">
+              <img [src]="user.picture" class="d-inline rounded-circle my-2">
+            </div>
+            <div class="col-6 d-flex flex-column align-items-start justify-content-center text-truncate">
+              <p>@{{ user.username }}</p>
+              <p class="text-secondary">{{ user.fullname }}</p>
+            </div>
+            <div class="col-3 d-flex justify-content-end align-items-center text-secondary">
+              <span>{{ user.followers | shortNumber }}</span>
+            </div>
+          </div>
+        </app-autocomplete-input>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+img {
+  max-height: 160px;
+}
+
+.certificate {
+  &::before {
+    content: '\2713'; // checkmark
+    color: whitesmoke;
+    font-size: 0.45em;
+    font-weight: bold;
+    position: relative;
+    left: 14px;
+    top: -4px;
+  }
+}
