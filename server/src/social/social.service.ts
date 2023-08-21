@@ -18,7 +18,13 @@ export class SocialService {
 
     public async getFeed(params: GetFeedDTO) {
         return await firstValueFrom(
-            this.http.get('raw/ig/user/feed', { params }).pipe(this.getAxiosPipes())
+            this.http.get('raw/ig/user/feed', { params }).pipe(this.getAxiosPipes(), map(value => {
+                value.items.map(item => {
+                    item.display_url = 'http://localhost:3000/image/' + item.display_url;
+                    return item;
+                })
+                return value;
+            }))
         );
     }
 

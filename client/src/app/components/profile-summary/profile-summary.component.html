@@ -8,9 +8,7 @@
       <fa-icon *ngIf="profile.is_verified" size="sm" class="text-primary certificate" [icon]="faCertificate"></fa-icon>
     </h1>
     <div class="fw-medium">
-      <span class="me-4 d-block d-md-inline"><b>{{ 2048 | shortNumber}}</b> posts</span>
       <span class="me-4 d-block d-md-inline"><b>{{ profile.followers | shortNumber }}</b> followers</span>
-      <span class="me-4 d-block d-md-inline"><b>{{ 0 | shortNumber}}</b> following</span>
     </div>
     <div>
       <a [href]="contact.formatted_value" target="_blank" *ngFor="let contact of profileService.contacts$ | async"
